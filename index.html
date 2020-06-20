@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Session with MSP</title>
+    <link rel="stylesheet" href="style/index.css">
+
+    <!-- register service worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(() => { console.log("[ PWA Fire Bundle ] Service Worker Registered"); });
+            });
+        }  
+    </script>
+
+    <!-- start of web manifest -->
+    <link rel="manifest" href="./app.webmanifest">
+    <!-- end of web manifest -->
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <p>Progressive Web Applications</p>
+
+        <button class="burger" id="burger">
+            &#9776
+        </button>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a rel="noopener" target="_blank" href="https://github.com/waynegakuo/pwa-msp-session">GitHub Repo</a>
+            </li>
+            <li>
+                <a href="https://twitter.com/wayne_gakuo?ref_src=twsrc%5Etfw" class="twitter-follow-button"
+                    data-show-count="false">Follow @waynegakuo</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <img src="images/pwa_banner.jpeg" alt="">
+        <button id="open">Click Me</button>
+        <footer>
+            <span class="footer_desc">Done with &#10084; by <a class="git_link" href="https://github.com/waynegakuo"
+                    target="_blank" rel="noopener">Wayne Gakuo</a></span>
+        </footer>
+    </div>
+
+    <!-- Hidden Modal -->
+    <div class="modal-container" id="modal_container">
+        <div class="modal">
+            <h1>Thank You For Attending!</h1>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum."</p>
+
+            <button id="close">Close Me</button>
+        </div>
+    </div>
+</body>
+<script src="js/index.js"></script>
+
+</html>
