@@ -19,8 +19,8 @@ self.addEventListener('fetch', (event) => {
             // Take a list of URLs, then fetch them from the server and add the response to the cache...
             return cache.addAll([                    
           './index.html', 
-          './App.css', 
-          './App.js', 
+          './js/index.css', 
+          './js/index.js', 
           './images/*'      
           ]);
         })
